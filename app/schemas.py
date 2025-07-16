@@ -97,7 +97,7 @@ class BatchSchema(BatchBase):
 
 class OrderSchema(OrderBase):
     order_id: int
-    batches: Optional[List[BatchSchema]] = None
+    # batches: Optional[List[BatchSchema]] = None
     model_config = ConfigDict(from_attributes=True)
 
 
