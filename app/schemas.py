@@ -28,6 +28,9 @@ class OrderBase(BaseModel):
     weightWithoutCutting: float
     weightWithCutting: float
 
+    class Config:
+        from_attributes = True
+
 
 class OrderCreate(OrderBase):
     pass
