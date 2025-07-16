@@ -1,6 +1,10 @@
+from click.core import batch
 from fastapi import FastAPI
 from app.database import init_db
-from app.routes import orders
+from app.routes import (orders, batches, equipment, workers,
+                        winding, extrusion, cutting, paketki,
+                        printing, flexa, fproducts
+                        )
 
 app = FastAPI(title="Cronck API")
 
@@ -17,6 +21,17 @@ async def startup():
 
 
 app.include_router(orders.router)
+app.include_router(batches.router)
+app.include_router(equipment.router)
+app.include_router(workers.router)
+app.include_router(winding.router)
+app.include_router(extrusion.router)
+app.include_router(cutting.router)
+app.include_router(paketki.router)
+app.include_router(printing.router)
+app.include_router(flexa.router)
+app.include_router(fproducts.router)
+
 
 
 @app.get("/")
